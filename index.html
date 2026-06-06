@@ -431,8 +431,8 @@
                     <p class="font-styrene text-xl md:text-2xl leading-relaxed max-w-2xl text-[var(--text-primary)]">
                         Unapologetic performance. Brutalist architecture. The ultimate computational powerhouse built for AI inference and high-end rendering.
                     </p>
-                    <button onclick="addToCart('Neural Engine v2', 2999)" class="bg-[var(--text-primary)] text-[var(--bg-primary)] font-mono font-black text-sm tracking-[0.2em] uppercase px-8 py-4 hover:scale-105 transition-transform duration-300 shrink-0">
-                        ADD TO CART - $2,999
+                    <button onclick="addToCart('Neural Engine v2', 299999)" class="bg-[var(--text-primary)] text-[var(--bg-primary)] font-mono font-black text-sm tracking-[0.2em] uppercase px-8 py-4 hover:scale-105 transition-transform duration-300 shrink-0">
+                        ADD TO CART - ₹2,99,999
                     </button>
                 </div>
             </div>
@@ -441,7 +441,7 @@
         <!-- DIVIDER -->
         <div class="w-full h-[3px] bg-[var(--border-primary)]"></div>
 
-        <!-- PRODUCT CATALOG -->
+   <!-- PRODUCT CATALOG -->
         <section class="py-24 px-4 md:px-12 bg-[var(--bg-secondary)] relative z-20">
             <div class="max-w-7xl mx-auto">
                 <div class="flex justify-between items-end mb-12 border-b-[3px] border-[var(--border-primary)] pb-6 stagger-element">
@@ -452,118 +452,174 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-element">
                     
                     <!-- GPU -->
-                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between h-[500px]">
+                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between">
                         <div>
                             <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">COMPUTE</h3>
                             <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
                             </div>
                             <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">RTX 6090 TITAN</h4>
-                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)]">
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)] mb-2">
                                 48GB VRAM. Triple-fan cooling. Massive brutalist shroud. 
                             </p>
+                            <div class="font-mono text-xs text-green-600 font-bold mb-1">In Stock. FREE Delivery by Tomorrow</div>
+                            <div class="font-mono text-xs text-[var(--arsenal-text)]">7 Days Replacement</div>
                         </div>
                         <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
-                            <span class="font-mono font-bold text-lg text-[var(--arsenal-title)]">$1,599</span>
-                            <button onclick="addToCart('RTX 6090 TITAN', 1599)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                            <div class="flex flex-col">
+                                <span class="font-mono text-xs line-through text-[var(--arsenal-text)]">M.R.P: ₹1,80,000</span>
+                                <span class="font-mono font-bold text-xl text-[var(--arsenal-title)]">₹1,49,999 <span class="text-xs text-red-600 font-bold ml-1">(16% OFF)</span></span>
+                            </div>
+                            <button onclick="addToCart('RTX 6090 TITAN', 149999)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
                         </div>
                     </div>
 
                     <!-- MOTHERBOARD -->
-                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between h-[500px]">
+                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between">
                         <div>
                             <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">CORE</h3>
                             <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
                             </div>
                             <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">OBSIDIAN X670E</h4>
-                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)]">
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)] mb-2">
                                 E-ATX. Complete thermal armor. No RGB. Just pure matte black utility.
                             </p>
+                            <div class="font-mono text-xs text-green-600 font-bold mb-1">In Stock. FREE Delivery</div>
+                            <div class="font-mono text-xs text-[var(--arsenal-text)]">No Cost EMI available</div>
                         </div>
                         <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
-                            <span class="font-mono font-bold text-lg text-[var(--arsenal-title)]">$499</span>
-                            <button onclick="addToCart('OBSIDIAN X670E', 499)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                            <div class="flex flex-col">
+                                <span class="font-mono text-xs line-through text-[var(--arsenal-text)]">M.R.P: ₹55,000</span>
+                                <span class="font-mono font-bold text-xl text-[var(--arsenal-title)]">₹42,999 <span class="text-xs text-red-600 font-bold ml-1">(21% OFF)</span></span>
+                            </div>
+                            <button onclick="addToCart('OBSIDIAN X670E', 42999)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                        </div>
+                    </div>
+
+                    <!-- PROCESSOR -->
+                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">PROCESSOR</h3>
+                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">i7-14700K CPU</h4>
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)] mb-2">
+                                20 Cores. Unlocked desktop processor for extreme gaming and content creation.
+                            </p>
+                            <div class="font-mono text-xs text-green-600 font-bold mb-1">Fast Delivery by Wed</div>
+                            <div class="font-mono text-xs text-[var(--arsenal-text)]">3 Year Warranty</div>
+                        </div>
+                        <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
+                            <div class="flex flex-col">
+                                <span class="font-mono text-xs line-through text-[var(--arsenal-text)]">M.R.P: ₹59,100</span>
+                                <span class="font-mono font-bold text-xl text-[var(--arsenal-title)]">₹42,948 <span class="text-xs text-red-600 font-bold ml-1">(27% OFF)</span></span>
+                            </div>
+                            <button onclick="addToCart('i7-14700K CPU', 42948)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
                         </div>
                     </div>
 
                     <!-- KEYBOARD -->
-                    <div class="bg-[var(--text-primary)] border-[3px] border-[var(--border-dark)] p-8 shadow-[8px_8px_0_var(--border-dark)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--border-dark)] transition-all duration-300 flex flex-col justify-between h-[500px]">
+                    <div class="bg-[var(--text-primary)] border-[3px] border-[var(--border-dark)] p-8 shadow-[8px_8px_0_var(--border-dark)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--border-dark)] transition-all duration-300 flex flex-col justify-between">
                         <div>
                             <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--bg-primary)] mb-4">PERIPHERAL</h3>
                             <div class="w-full h-40 mb-4 bg-[#1a1a1a] border-2 border-[var(--border-dark)] overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 opacity-80 hover:opacity-100">
                             </div>
                             <h4 class="font-serif font-black text-2xl uppercase text-[var(--bg-primary)] mb-2">HEAVY TYPE-01</h4>
-                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--bg-primary)] opacity-80">
-                                4kg milled aluminum chassis. Topre switches. PBT blank keycaps. The ultimate typing weapon.
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--bg-primary)] opacity-80 mb-2">
+                                4kg milled aluminum chassis. Topre switches. PBT blank keycaps.
                             </p>
+                            <div class="font-mono text-xs text-green-400 font-bold mb-1">Pre-order. Ships in 2 weeks.</div>
+                            <div class="font-mono text-xs text-[var(--bg-primary)] opacity-80">Imported from Japan</div>
                         </div>
                         <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--bg-primary)] pt-4">
-                            <span class="font-mono font-bold text-lg text-[var(--bg-primary)]">$349</span>
-                            <button onclick="addToCart('HEAVY TYPE-01', 349)" class="bg-[var(--bg-primary)] text-[var(--text-primary)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                            <div class="flex flex-col">
+                                <span class="font-mono text-xs line-through text-[var(--bg-primary)] opacity-60">M.R.P: ₹35,000</span>
+                                <span class="font-mono font-bold text-xl text-[var(--bg-primary)]">₹29,999 <span class="text-xs text-red-400 font-bold ml-1">(14% OFF)</span></span>
+                            </div>
+                            <button onclick="addToCart('HEAVY TYPE-01', 29999)" class="bg-[var(--bg-primary)] text-[var(--text-primary)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">PRE-ORDER</button>
                         </div>
                     </div>
                     
-                    <!-- MOUSE -->
-                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between h-[500px]">
+                    <!-- SSD -->
+                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between">
                         <div>
-                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">PERIPHERAL</h3>
+                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">STORAGE</h3>
                             <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1615663245857-ac93bb5c3c2c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                                <img src="https://images.unsplash.com/photo-1628557044797-f21a177c37ec?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
                             </div>
-                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">VOID MOUSE</h4>
-                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)]">
-                                Ultra-lightweight 38g. Carbon fiber shell. 8000Hz polling rate.
+                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">GEONIX 256GB SSD</h4>
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)] mb-2">
+                                SATA 2.5". 570 MB/s Read Speed. Quad channel controller. 5 Years Warranty.
                             </p>
+                            <div class="font-mono text-xs text-green-600 font-bold mb-1">In Stock. Cash on Delivery</div>
+                            <div class="font-mono text-xs text-[var(--arsenal-text)]">Top Rated Product</div>
                         </div>
                         <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
-                            <span class="font-mono font-bold text-lg text-[var(--arsenal-title)]">$129</span>
-                            <button onclick="addToCart('VOID MOUSE', 129)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                            <div class="flex flex-col">
+                                <span class="font-mono text-xs line-through text-[var(--arsenal-text)]">M.R.P: ₹8,999</span>
+                                <span class="font-mono font-bold text-xl text-[var(--arsenal-title)]">₹2,899 <span class="text-xs text-red-600 font-bold ml-1">(67% OFF)</span></span>
+                            </div>
+                            <button onclick="addToCart('GEONIX 256GB SSD', 2899)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
                         </div>
                     </div>
                     
-                    <!-- HEADPHONES -->
-                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between h-[500px]">
+                    <!-- POWER SUPPLY -->
+                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between">
                         <div>
-                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">AUDIO</h3>
+                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">POWER</h3>
                             <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
                             </div>
-                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">SILENCE PRO</h4>
-                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)]">
-                                Studio grade planar magnetic drivers. Absolute noise isolation.
+                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">MWE 550 V3 PSU</h4>
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)] mb-2">
+                                550W. 80 Plus Bronze Certified. Quite HDB Fan. DC-to-DC Circuit Design.
                             </p>
+                            <div class="font-mono text-xs text-green-600 font-bold mb-1">FREE delivery by Tue</div>
+                            <div class="font-mono text-xs text-[var(--arsenal-text)]">Best Seller</div>
                         </div>
                         <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
-                            <span class="font-mono font-bold text-lg text-[var(--arsenal-title)]">$499</span>
-                            <button onclick="addToCart('SILENCE PRO', 499)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
-                        </div>
-                    </div>
-                    
-                    <!-- MONITOR -->
-                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between h-[500px]">
-                        <div>
-                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">DISPLAY</h3>
-                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                            <div class="flex flex-col">
+                                <span class="font-mono text-xs line-through text-[var(--arsenal-text)]">M.R.P: ₹6,999</span>
+                                <span class="font-mono font-bold text-xl text-[var(--arsenal-title)]">₹4,267 <span class="text-xs text-red-600 font-bold ml-1">(39% OFF)</span></span>
                             </div>
-                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">OLED ULTRA</h4>
-                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)]">
-                                32-inch 4K OLED. 240Hz refresh rate. Infinite contrast ratio.
-                            </p>
-                        </div>
-                        <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
-                            <span class="font-mono font-bold text-lg text-[var(--arsenal-title)]">$1,199</span>
-                            <button onclick="addToCart('OLED ULTRA', 1199)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                            <button onclick="addToCart('MWE 550 V3 PSU', 4267)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
                         </div>
                     </div>
 
                 </div>
-            </div>
-        </section>
 
-        <!-- CART SIDEBAR (Hidden by default) -->
+                <!-- COMPANY POLICIES -->
+                <div class="mt-20 border-[3px] border-[var(--border-primary)] p-8 flex flex-col md:flex-row justify-between items-center gap-8 bg-[var(--bg-primary)] stagger-element">
+                    <div class="flex flex-col items-center text-center">
+                        <span class="text-4xl mb-2">⚡</span>
+                        <h4 class="font-mono font-black text-sm tracking-widest uppercase mb-1">Fast Dispatch</h4>
+                        <p class="font-serif text-xs text-[var(--text-secondary)] italic">Ships within 24 hours</p>
+                    </div>
+                    <div class="hidden md:block w-[3px] h-16 bg-[var(--border-primary)]"></div>
+                    <div class="flex flex-col items-center text-center">
+                        <span class="text-4xl mb-2">🛡️</span>
+                        <h4 class="font-mono font-black text-sm tracking-widest uppercase mb-1">Warranty</h4>
+                        <p class="font-serif text-xs text-[var(--text-secondary)] italic">1 to 5 years brand warranty</p>
+                    </div>
+                    <div class="hidden md:block w-[3px] h-16 bg-[var(--border-primary)]"></div>
+                    <div class="flex flex-col items-center text-center">
+                        <span class="text-4xl mb-2">💳</span>
+                        <h4 class="font-mono font-black text-sm tracking-widest uppercase mb-1">No Cost EMI</h4>
+                        <p class="font-serif text-xs text-[var(--text-secondary)] italic">Available on major credit cards</p>
+                    </div>
+                    <div class="hidden md:block w-[3px] h-16 bg-[var(--border-primary)]"></div>
+                    <div class="flex flex-col items-center text-center">
+                        <span class="text-4xl mb-2">📦</span>
+                        <h4 class="font-mono font-black text-sm tracking-widest uppercase mb-1">Easy Returns</h4>
+                        <p class="font-serif text-xs text-[var(--text-secondary)] italic">10-day replacement policy</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>     <!-- CART SIDEBAR (Hidden by default) -->
         <div id="cart-sidebar" class="fixed top-0 right-0 w-full md:w-[400px] h-full bg-[var(--bg-primary)] border-l-[3px] border-[var(--border-primary)] z-[100] transform translate-x-full transition-transform duration-500 flex flex-col">
             <div class="p-6 border-b-[3px] border-[var(--border-primary)] flex justify-between items-center">
                 <h2 class="font-serif font-black text-2xl uppercase">CART</h2>
@@ -674,7 +730,7 @@
 
         function updateCartUI() {
             cartCount.innerText = cart.length;
-            cartTotalSpan.innerText = '$' + total.toLocaleString();
+            cartTotalSpan.innerText = '₹' + total.toLocaleString('en-IN');
             
             if (cart.length === 0) {
                 cartItemsDiv.innerHTML = '<p class="opacity-50">Your cart is empty.</p>';
