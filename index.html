@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUIP COMPUTERS | Premium Hardware</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@400;700;900&family=Space+Mono&family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <!-- Lenis Smooth Scroll CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configure Tailwind to use our fonts and dark mode
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { background: '#1a1a1a' },
+                    fontFamily: {
+                        sans: ['"Space Grotesk"', 'sans-serif'],
+                        mono: ['"Space Mono"', 'monospace'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        styrene: ['"Styrene B"', '"Outfit"', '"Space Grotesk"', 'sans-serif'],
+                        tiempos: ['"Tiempos Text"', '"Anthropic Serif"', '"Lora"', '"Charter"', '"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+        }
+
+        /* Lenis setup */
+        html.lenis, html.lenis body {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #e4dfd6;
+        }
+
+        .section-page {
+            position: relative;
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+            padding-top: 65px;
+            scroll-margin-top: 100px;
+            min-height: 100vh;
+        }
+
+        /* Brutalist Animation Classes */ ("or")
+        .brutalist-btn {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .brutalist-btn:hover {
+            filter: invert(1);
+            transform: translate(4px, 4px);
+            box-shadow: none !important;
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: rotate(1deg) translateY(0px); }
+            50% { transform: rotate(-1.5deg) translateY(-3px); }
+        }
+
+        @keyframes float-subtle {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .sticker-float {
+            animation: float-subtle 3s ease-in-out infinite;
+        }
+        
+        .sticker-swing {
+            animation: swing 4s ease-in-out infinite;
+        }
+
+        /* Refined Split-Alignment Nav Styles */
+        #top-nav {
+            width: 100%;
+            height: 65px;
+            background-color: #1a1a1a;
+            border-bottom: 2px solid #e4dfd6;
+            z-index: 100;
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            padding: 0 40px;
+        }
+
+        .nav-group-right {
+            display: flex;
+            align-items: stretch;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            font-family: "Space Mono", monospace;
+            font-weight: 900;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            color: #e4dfd6;
+            text-decoration: none;
+            transition: background-color 0.1s steps(2), color 0.1s steps(2);
+            white-space: nowrap;
+        }
+
+        .nav-header {
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            font-family: "Space Mono", monospace;
+            font-weight: 900;
+            font-size: 0.7rem;
+            letter-spacing: 0.35em;
+            color: #5a5a5a;
+            text-transform: uppercase;
+            white-space: nowrap;
+            cursor: default;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background-color: #e4dfd6;
+            color: #1a1a1a;
+        }
+
+        /* SECTION STYLES */
+        section {
+            position: relative;
+        }
+
+        .section-padding {
+            padding: 120px 40px;
+        }
+
+        .bento-card {
+            background-color: #111111;
+            border: 3px solid #e4dfd6;
+            padding: 40px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .bento-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 4px 4px 0px #e4dfd6;
+        }
+
+        .ledger-line {
+            border-bottom: 2px solid #e4dfd6;
+            padding: 32px 0;
+        }
+
+        .giant-email {
+            font-size: clamp(2.5rem, 7vw, 10rem);
+            font-family: "Playfair Display", serif;
+            font-weight: 900;
+            line-height: 1;
+            padding: 60px 20px;
+            transition: background-color 0.1s steps(2), color 0.1s steps(2);
+            width: 100%;
+            text-align: center;
+            display: block;
+            color: #e4dfd6;
+        }
+
+        .giant-email:hover {
+            background-color: #e4dfd6;
+            color: #1a1a1a;
+        }
+
+        @media (max-width: 768px) {
+            #top-nav {
+                height: 55px;
+                padding: 0 20px;
+            }
+            .section-page {
+                top: 55px;
+                height: calc(100vh - 55px);
+            }
+
+            .nav-group-right {
+                gap: 0.75rem;
+            }
+
+            .nav-link,
+            .nav-header {
+                padding: 0 8px;
+                font-size: 0.6rem;
+            }
+
+            .section-padding {
+                padding: 80px 20px;
+            }
+        }
+
+        #main-content {
+            padding-top: 0;
+        }
+
+        .section-padding {
+            padding: 80px 20px;
+        }
+        .snap-item {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+    
+        /* OVERLAY STYLES */
+        .project-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #1a1a1a;
+            z-index: 9999;
+            transform: translateX(100%);
+            transition: transform 0.45s cubic-bezier(0.77,0,0.175,1);
+            overflow-y: auto;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .project-overlay.active {
+            transform: translateX(0);
+        }
+        .overlay-close {
+            position: sticky;
+            top: 24px;
+            right: 24px;
+            float: right;
+            font-family: "Space Mono", monospace;
+            font-weight: 900;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 8px 16px;
+            border: 2px solid #e4dfd6;
+            background: #1a1a1a;
+            color: #e4dfd6;
+            z-index: 10000;
+            transition: background 0.2s, color 0.2s;
+        }
+        .overlay-close:hover {
+            background: #e4dfd6;
+            color: #1a1a1a;
+        }
+        .overlay-content {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            clear: both;
+        }
+        @media (min-width: 1024px) {
+            .overlay-content {
+                flex-direction: row;
+            }
+            .overlay-left {
+                width: 40%;
+                padding: 60px;
+                border-right: 1px solid rgba(255,255,255,0.12);
+            }
+            .overlay-right {
+                width: 60%;
+                padding: 60px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        @media (max-width: 1023px) {
+            .overlay-left, .overlay-right {
+                width: 100%;
+                padding: 40px 20px;
+            }
+            .overlay-right {
+                border-top: 1px solid rgba(0,0,0,0.12);
+            }
+        }
+        /* Hide scrollbar when overlay is open */
+        body.overlay-open {
+            overflow: hidden;
+        }
+
+    
+                        :root {
+            --arsenal-card-bg: #e4dfd6;
+            --arsenal-border: #1a1a1a;
+            --arsenal-shadow: #1a1a1a;
+            --arsenal-title: #1a1a1a;
+            --arsenal-text: #5a5a5a;
+            --card-bg: #e4dfd6;
+            --card-text: #1a1a1a;
+            --card-border: #1a1a1a;
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #151515;
+            --text-primary: #e4dfd6;
+            --text-secondary: #cccccc;
+            --text-muted: #888888;
+            --border-primary: #e4dfd6;
+            --border-dark: #1a1a1a;
+        }
+
+        
+                        .force-dark {
+            --arsenal-card-bg: #e4dfd6 !important;
+            --arsenal-border: #1a1a1a !important;
+            --arsenal-shadow: #1a1a1a !important;
+            --arsenal-title: #1a1a1a !important;
+            --arsenal-text: #5a5a5a !important;
+            --card-bg: #e4dfd6 !important;
+            --card-text: #1a1a1a !important;
+            --card-border: #1a1a1a !important;
+            --bg-primary: #1a1a1a !important;
+            --bg-secondary: #151515 !important;
+            --text-primary: #e4dfd6 !important;
+            --text-secondary: #cccccc !important;
+            --text-muted: #888888 !important;
+            --border-primary: #e4dfd6 !important;
+            --border-dark: #1a1a1a !important;
+        }
+
+                        body.light-theme {
+            --arsenal-card-bg: #fcfbf9;
+            --arsenal-border: #635640;
+            --arsenal-shadow: #635640;
+            --arsenal-title: #1a1a1a;
+            --arsenal-text: #1a1a1a;
+            --card-bg: #E6E1D6;
+            --card-text: #1a1a1a;
+            --card-border: #1a1a1a;
+            --bg-primary: #F4F0EB;
+            --bg-secondary: #dcd7ce;
+            --text-primary: #1a1a1a;
+            --text-secondary: #333333;
+            --text-muted: #5a5a5a;
+            --border-primary: #1a1a1a;
+            --border-dark: #e4dfd6;
+        }
+
+    
+        .selected-work-card {
+            background-color: var(--card-bg);
+            border: 3px solid var(--card-border);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s;
+        }
+        .selected-work-card:hover {
+            transform: translateY(-0.25rem);
+            box-shadow: 6px 6px 0 var(--border-primary);
+        }
+        body.light-theme .selected-work-card {
+            border: 1px solid #d2cabf;
+            border-radius: 12px;
+        }
+        body.light-theme .selected-work-card:hover {
+            box-shadow: none;
+            transform: translateY(-0.25rem);
+        }
+
+    </style>
+</head>
+<body class="bg-[var(--bg-primary)] text-[var(--text-primary)] font-sans transition-colors duration-300 relative antialiased selection:bg-[var(--text-primary)] selection:text-[var(--bg-primary)]">
+    
+    <!-- CURSOR FOLLOWER -->
+    <div id="cursor-follower" class="fixed w-6 h-6 border-2 border-[var(--text-primary)] rounded-full pointer-events-none z-[9999] transition-transform duration-75 ease-out mix-blend-difference hidden md:block"></div>
+
+    <!-- TOP NAVIGATION -->
+    <nav id="top-nav" class="fixed top-0 left-0 w-full z-50 mix-blend-difference flex justify-between items-center px-4 md:px-8 py-4 transition-all duration-300">
+        <a href="#" class="font-serif font-black text-xl md:text-3xl tracking-tighter uppercase text-[#e4dfd6]">
+            SUIP COMPUTERS
+        </a>
+        <div class="flex gap-4 md:gap-8 items-center text-[#e4dfd6] font-mono text-xs md:text-sm font-bold tracking-widest">
+            <button id="cart-btn" class="hover:underline">CART (<span id="cart-count">0</span>)</button>
+            <button id="theme-toggle" class="hover:underline">[ THEME ]</button>
+        </div>
+    </nav>
+
+    <!-- MAIN SCROLL CONTAINER -->
+    <main id="main-container">
+        
+        <!-- HERO SECTION -->
+        <section class="min-h-screen flex flex-col justify-center px-4 md:px-12 pt-20 relative">
+            <div class="stagger-element max-w-7xl mx-auto w-full">
+                <span class="font-mono text-[10px] md:text-xs font-bold tracking-[0.2em] text-[var(--text-secondary)] block mb-4 md:mb-6 uppercase">NEW ARRIVAL // FLAGSHIP</span>
+                <h1 class="font-serif font-black text-6xl sm:text-8xl md:text-[12rem] leading-[0.8] tracking-tighter uppercase mb-8">
+                    THE NEURAL<br>ENGINE v2.
+                </h1>
+                
+                <div class="flex flex-col md:flex-row gap-8 justify-between items-start md:items-end border-t-[3px] border-[var(--border-primary)] pt-8">
+                    <p class="font-styrene text-xl md:text-2xl leading-relaxed max-w-2xl text-[var(--text-primary)]">
+                        Unapologetic performance. Brutalist architecture. The ultimate computational powerhouse built for AI inference and high-end rendering.
+                    </p>
+                    <button onclick="addToCart('Neural Engine v2', 2999)" class="bg-[var(--text-primary)] text-[var(--bg-primary)] font-mono font-black text-sm tracking-[0.2em] uppercase px-8 py-4 hover:scale-105 transition-transform duration-300 shrink-0">
+                        ADD TO CART - $2,999
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIVIDER -->
+        <div class="w-full h-[3px] bg-[var(--border-primary)]"></div>
+
+        <!-- PRODUCT CATALOG (THE ARSENAL STYLE) -->
+        <section class="py-24 px-4 md:px-12 bg-[var(--bg-secondary)]">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-end mb-12 border-b-[3px] border-[var(--border-primary)] pb-6 stagger-element">
+                    <h2 class="font-serif font-black text-4xl md:text-6xl tracking-tighter uppercase">HARDWARE</h2>
+                </div>
+
+                <!-- Bento Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-element">
+                    
+                    <!-- GPU -->
+                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between h-[400px]">
+                        <div>
+                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">COMPUTE</h3>
+                            <h4 class="font-serif font-black text-3xl uppercase text-[var(--arsenal-title)] mb-2">RTX 6090 TITAN</h4>
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)]">
+                                48GB VRAM. Triple-fan cooling. Massive brutalist shroud. 
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-end mt-8 border-t-2 border-[var(--arsenal-border)] pt-4">
+                            <span class="font-mono font-bold text-lg text-[var(--arsenal-title)]">$1,599</span>
+                            <button onclick="addToCart('RTX 6090 TITAN', 1599)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                        </div>
+                    </div>
+
+                    <!-- MOTHERBOARD -->
+                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between h-[400px]">
+                        <div>
+                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">CORE</h3>
+                            <h4 class="font-serif font-black text-3xl uppercase text-[var(--arsenal-title)] mb-2">OBSIDIAN X670E</h4>
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)]">
+                                E-ATX. Complete thermal armor. No RGB. Just pure matte black utility.
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-end mt-8 border-t-2 border-[var(--arsenal-border)] pt-4">
+                            <span class="font-mono font-bold text-lg text-[var(--arsenal-title)]">$499</span>
+                            <button onclick="addToCart('OBSIDIAN X670E', 499)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                        </div>
+                    </div>
+
+                    <!-- KEYBOARD -->
+                    <div class="bg-[var(--text-primary)] border-[3px] border-[var(--border-dark)] p-8 shadow-[8px_8px_0_var(--border-dark)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--border-dark)] transition-all duration-300 flex flex-col justify-between h-[400px]">
+                        <div>
+                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--bg-primary)] mb-4">PERIPHERAL</h3>
+                            <h4 class="font-serif font-black text-3xl uppercase text-[var(--bg-primary)] mb-2">HEAVY TYPE-01</h4>
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--bg-primary)] opacity-80">
+                                4kg milled aluminum chassis. Topre switches. PBT blank keycaps. The ultimate typing weapon.
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-end mt-8 border-t-2 border-[var(--bg-primary)] pt-4">
+                            <span class="font-mono font-bold text-lg text-[var(--bg-primary)]">$349</span>
+                            <button onclick="addToCart('HEAVY TYPE-01', 349)" class="bg-[var(--bg-primary)] text-[var(--text-primary)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CART SIDEBAR (Hidden by default) -->
+        <div id="cart-sidebar" class="fixed top-0 right-0 w-full md:w-[400px] h-full bg-[var(--bg-primary)] border-l-[3px] border-[var(--border-primary)] z-[100] transform translate-x-full transition-transform duration-500 flex flex-col">
+            <div class="p-6 border-b-[3px] border-[var(--border-primary)] flex justify-between items-center">
+                <h2 class="font-serif font-black text-2xl uppercase">CART</h2>
+                <button id="close-cart" class="font-mono font-bold text-sm tracking-widest hover:underline">CLOSE</button>
+            </div>
+            <div id="cart-items" class="flex-grow p-6 overflow-y-auto font-mono text-sm space-y-4">
+                <!-- Cart items will be injected here -->
+            </div>
+            <div class="p-6 border-t-[3px] border-[var(--border-primary)]">
+                <div class="flex justify-between font-mono font-bold text-lg mb-4">
+                    <span>TOTAL:</span>
+                    <span id="cart-total">$0</span>
+                </div>
+                <button onclick="checkout()" class="w-full bg-[var(--text-primary)] text-[var(--bg-primary)] font-mono font-black text-sm tracking-[0.2em] uppercase py-4 hover:scale-[1.02] transition-transform">
+                    CHECKOUT
+                </button>
+            </div>
+        </div>
+
+        <!-- Overlay -->
+        <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-[90] hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm"></div>
+
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <script>
+        // 1. Lenis Smooth Scroll
+        const lenis = new Lenis({
+            autoRaf: true,
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        });
+
+        // 2. Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        const bodyElement = document.body;
+
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            htmlElement.classList.remove('dark');
+            bodyElement.classList.add('light-theme');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            bodyElement.classList.toggle('light-theme');
+            
+            const newTheme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme);
+            
+            // GSAP Flash effect
+            gsap.fromTo("body", 
+                { backgroundColor: newTheme === 'dark' ? "#ffffff" : "#000000" },
+                { backgroundColor: "", duration: 0.5, clearProps: "all" }
+            );
+        });
+
+        // 3. E-Commerce Cart Logic
+        let cart = [];
+        let total = 0;
+        
+        const cartBtn = document.getElementById('cart-btn');
+        const closeCartBtn = document.getElementById('close-cart');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const cartCount = document.getElementById('cart-count');
+        const cartItemsDiv = document.getElementById('cart-items');
+        const cartTotalSpan = document.getElementById('cart-total');
+
+        function toggleCart() {
+            const isOpen = !cartSidebar.classList.contains('translate-x-full');
+            if (isOpen) {
+                cartSidebar.classList.add('translate-x-full');
+                cartOverlay.classList.remove('opacity-100');
+                setTimeout(() => cartOverlay.classList.add('hidden'), 300);
+                lenis.start();
+            } else {
+                cartOverlay.classList.remove('hidden');
+                // Force reflow
+                void cartOverlay.offsetWidth;
+                cartSidebar.classList.remove('translate-x-full');
+                cartOverlay.classList.add('opacity-100');
+                lenis.stop();
+            }
+        }
+
+        cartBtn.addEventListener('click', toggleCart);
+        closeCartBtn.addEventListener('click', toggleCart);
+        cartOverlay.addEventListener('click', toggleCart);
+
+        window.addToCart = function(name, price) {
+            cart.push({ name, price });
+            total += price;
+            updateCartUI();
+            
+            // Visual feedback
+            const btn = event.target;
+            const originalText = btn.innerText;
+            btn.innerText = "ADDED!";
+            gsap.to(btn, { scale: 1.1, duration: 0.1, yoyo: true, repeat: 1 });
+            setTimeout(() => btn.innerText = originalText, 1000);
+        }
+
+        function updateCartUI() {
+            cartCount.innerText = cart.length;
+            cartTotalSpan.innerText = '$' + total.toLocaleString();
+            
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p class="opacity-50">Your cart is empty.</p>';
+            } else {
+                cartItemsDiv.innerHTML = cart.map((item, index) => `
+                    <div class="flex justify-between border-b-[1px] border-[var(--border-primary)] pb-2 border-opacity-30">
+                        <span>${item.name}</span>
+                        <span>$${item.price.toLocaleString()}</span>
+                    </div>
+                `).join('');
+            }
+        }
+        
+        window.checkout = function() {
+            if(cart.length === 0) return alert("Cart is empty!");
+            alert("Thanks for your purchase! (Hackathon Demo)");
+            cart = [];
+            total = 0;
+            updateCartUI();
+            toggleCart();
+        }
+
+        updateCartUI();
+
+        // 4. GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(".stagger-element", {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".stagger-element",
+                start: "top 80%"
+            }
+        });
+        
+        // Custom Cursor
+        const cursorFollower = document.getElementById('cursor-follower');
+        document.addEventListener('mousemove', (e) => {
+            requestAnimationFrame(() => {
+                cursorFollower.style.transform = `translate(${e.clientX - 12}px, ${e.clientY - 12}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
