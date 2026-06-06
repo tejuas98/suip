@@ -21,23 +21,15 @@ Welcome to the **SUIP COMPUTERS** repository! This is a brutalist, high-performa
 
 ## 📸 Screenshots
 
-*(Replace the placeholder below with your actual screenshot)*
 ![Hero Section](./screenshot-hero.png)
 
-*(Replace the placeholder below with your actual screenshot)*
 ![Product Catalog](./screenshot-catalog.png)
 
 ---
 
 ## 🎥 Video Playback
 
-*(Replace the placeholder below with your actual video or GIF showing the 3D model and scroll effects)*
-![Website Demo](./demo.gif)
-
-> **Instructions for the developer:** 
-> 1. Record your screen while scrolling through the site and interacting with the 3D model.
-> 2. Save the recording as `demo.gif` or `demo.mp4` and upload it to the root of this repository.
-> 3. Take two screenshots (`screenshot-hero.png` and `screenshot-catalog.png`) and upload them here!
+![Website Demo](./demo.webp)
 
 ---
 
