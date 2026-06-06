@@ -416,7 +416,11 @@
     <main id="main-container">
         
         <!-- HERO SECTION -->
-        <section class="min-h-screen flex flex-col justify-center px-4 md:px-12 pt-20 relative">
+        <section class="min-h-screen flex flex-col justify-center px-4 md:px-12 pt-20 relative overflow-hidden">
+            <!-- WebGL Container for Retro Computer -->
+            <div id="webgl-container"
+                class="absolute right-[0%] md:right-[-10%] top-1/2 -translate-y-1/2 w-full md:w-[60%] h-full z-10 pointer-events-none opacity-100 mix-blend-difference">
+            </div>
             <div class="stagger-element max-w-7xl mx-auto w-full">
                 <span class="font-mono text-[10px] md:text-xs font-bold tracking-[0.2em] text-[var(--text-secondary)] block mb-4 md:mb-6 uppercase">NEW ARRIVAL // FLAGSHIP</span>
                 <h1 class="font-serif font-black text-6xl sm:text-8xl md:text-[12rem] leading-[0.8] tracking-tighter uppercase mb-8">
@@ -437,8 +441,8 @@
         <!-- DIVIDER -->
         <div class="w-full h-[3px] bg-[var(--border-primary)]"></div>
 
-        <!-- PRODUCT CATALOG (THE ARSENAL STYLE) -->
-        <section class="py-24 px-4 md:px-12 bg-[var(--bg-secondary)]">
+        <!-- PRODUCT CATALOG -->
+        <section class="py-24 px-4 md:px-12 bg-[var(--bg-secondary)] relative z-20">
             <div class="max-w-7xl mx-auto">
                 <div class="flex justify-between items-end mb-12 border-b-[3px] border-[var(--border-primary)] pb-6 stagger-element">
                     <h2 class="font-serif font-black text-4xl md:text-6xl tracking-tighter uppercase">HARDWARE</h2>
@@ -448,47 +452,110 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-element">
                     
                     <!-- GPU -->
-                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between h-[400px]">
+                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between h-[500px]">
                         <div>
                             <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">COMPUTE</h3>
-                            <h4 class="font-serif font-black text-3xl uppercase text-[var(--arsenal-title)] mb-2">RTX 6090 TITAN</h4>
+                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">RTX 6090 TITAN</h4>
                             <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)]">
                                 48GB VRAM. Triple-fan cooling. Massive brutalist shroud. 
                             </p>
                         </div>
-                        <div class="flex justify-between items-end mt-8 border-t-2 border-[var(--arsenal-border)] pt-4">
+                        <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
                             <span class="font-mono font-bold text-lg text-[var(--arsenal-title)]">$1,599</span>
                             <button onclick="addToCart('RTX 6090 TITAN', 1599)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
                         </div>
                     </div>
 
                     <!-- MOTHERBOARD -->
-                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between h-[400px]">
+                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between h-[500px]">
                         <div>
                             <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">CORE</h3>
-                            <h4 class="font-serif font-black text-3xl uppercase text-[var(--arsenal-title)] mb-2">OBSIDIAN X670E</h4>
+                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">OBSIDIAN X670E</h4>
                             <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)]">
                                 E-ATX. Complete thermal armor. No RGB. Just pure matte black utility.
                             </p>
                         </div>
-                        <div class="flex justify-between items-end mt-8 border-t-2 border-[var(--arsenal-border)] pt-4">
+                        <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
                             <span class="font-mono font-bold text-lg text-[var(--arsenal-title)]">$499</span>
                             <button onclick="addToCart('OBSIDIAN X670E', 499)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
                         </div>
                     </div>
 
                     <!-- KEYBOARD -->
-                    <div class="bg-[var(--text-primary)] border-[3px] border-[var(--border-dark)] p-8 shadow-[8px_8px_0_var(--border-dark)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--border-dark)] transition-all duration-300 flex flex-col justify-between h-[400px]">
+                    <div class="bg-[var(--text-primary)] border-[3px] border-[var(--border-dark)] p-8 shadow-[8px_8px_0_var(--border-dark)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--border-dark)] transition-all duration-300 flex flex-col justify-between h-[500px]">
                         <div>
                             <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--bg-primary)] mb-4">PERIPHERAL</h3>
-                            <h4 class="font-serif font-black text-3xl uppercase text-[var(--bg-primary)] mb-2">HEAVY TYPE-01</h4>
+                            <div class="w-full h-40 mb-4 bg-[#1a1a1a] border-2 border-[var(--border-dark)] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 opacity-80 hover:opacity-100">
+                            </div>
+                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--bg-primary)] mb-2">HEAVY TYPE-01</h4>
                             <p class="font-sans font-bold text-sm leading-relaxed text-[var(--bg-primary)] opacity-80">
                                 4kg milled aluminum chassis. Topre switches. PBT blank keycaps. The ultimate typing weapon.
                             </p>
                         </div>
-                        <div class="flex justify-between items-end mt-8 border-t-2 border-[var(--bg-primary)] pt-4">
+                        <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--bg-primary)] pt-4">
                             <span class="font-mono font-bold text-lg text-[var(--bg-primary)]">$349</span>
                             <button onclick="addToCart('HEAVY TYPE-01', 349)" class="bg-[var(--bg-primary)] text-[var(--text-primary)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                        </div>
+                    </div>
+                    
+                    <!-- MOUSE -->
+                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between h-[500px]">
+                        <div>
+                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">PERIPHERAL</h3>
+                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1615663245857-ac93bb5c3c2c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">VOID MOUSE</h4>
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)]">
+                                Ultra-lightweight 38g. Carbon fiber shell. 8000Hz polling rate.
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
+                            <span class="font-mono font-bold text-lg text-[var(--arsenal-title)]">$129</span>
+                            <button onclick="addToCart('VOID MOUSE', 129)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                        </div>
+                    </div>
+                    
+                    <!-- HEADPHONES -->
+                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between h-[500px]">
+                        <div>
+                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">AUDIO</h3>
+                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">SILENCE PRO</h4>
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)]">
+                                Studio grade planar magnetic drivers. Absolute noise isolation.
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
+                            <span class="font-mono font-bold text-lg text-[var(--arsenal-title)]">$499</span>
+                            <button onclick="addToCart('SILENCE PRO', 499)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                        </div>
+                    </div>
+                    
+                    <!-- MONITOR -->
+                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between h-[500px]">
+                        <div>
+                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">DISPLAY</h3>
+                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">OLED ULTRA</h4>
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)]">
+                                32-inch 4K OLED. 240Hz refresh rate. Infinite contrast ratio.
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
+                            <span class="font-mono font-bold text-lg text-[var(--arsenal-title)]">$1,199</span>
+                            <button onclick="addToCart('OLED ULTRA', 1199)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
                         </div>
                     </div>
 
@@ -654,5 +721,511 @@
             });
         });
     </script>
+<!-- Three.js Library -->
+    
+    <!-- OVERLAYS -->
+    <!-- SCRIPTIFY OVERLAY -->
+    <div id="overlay-scriptify" class="project-overlay" data-lenis-prevent="true">
+        <button class="overlay-close" onclick="closeOverlay('scriptify')">✕ CLOSE</button>
+        <div class="overlay-content">
+            <div class="overlay-left">
+                <span class="font-mono text-[10px] font-bold tracking-[0.2em] text-[var(--arsenal-text)] block mb-6 uppercase">DATE: December 2025 | TYPE: Mobile Application | ROLE: Sole Developer + Project Lead | TEAM: 6 Members | LOCATION: SIH Grand Finale, Guntur, India</span>
+                <h2 class="font-serif font-black text-5xl tracking-tighter leading-[0.9] mb-6 uppercase">SCRIPTIFY</h2>
+                
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="bg-[var(--bg-secondary)] text-white font-sans font-black text-xs uppercase px-2 py-1">REACT NATIVE (EXPO)</span>
+                    <span class="bg-[var(--bg-secondary)] text-white font-sans font-black text-xs uppercase px-2 py-1">CLOUD VISION API</span>
+                    <span class="bg-[var(--bg-secondary)] text-white font-sans font-black text-xs uppercase px-2 py-1">CUSTOM OCR MAPPING</span>
+                    <span class="bg-[var(--bg-secondary)] text-white font-sans font-black text-xs uppercase px-2 py-1">FIREBASE</span>
+                    <span class="bg-[var(--bg-secondary)] text-white font-sans font-black text-xs uppercase px-2 py-1">PYTHON</span>
+                </div>
+
+                <div class="bg-[var(--text-primary)] border-[3px] border-[var(--border-dark)] p-5 shadow-[8px_8px_0_#151515] mb-8">
+                    <p class="font-sans font-bold text-lg leading-snug text-[var(--text-primary)]">
+                        India has 22 official languages written in 13 different scripts. For a traveler arriving in an unfamiliar state, a street sign in Tamil or Devanagari is completely unreadable. SCRIPTIFY solves this by processing raw camera input through a cloud-based OCR inference layer, then instantly transliterating detected text into the user's native script — offline-capable, with no internet dependency for the transliteration step itself.<br><br>
+                        The pipeline: camera frame → image preprocessing (contrast enhancement, noise reduction) → YOLO-based text region detection → Cloud Vision OCR extraction → Aksharamukha transliteration engine → rendered output in Devanagari, Tamil, Gurmukhi, or Bengali.<br><br>
+                        I was the only developer on a 6-person team. I wrote all the code, managed the architecture decisions, debugged API failures at 3AM, and demonstrated a live working demo to the SIH evaluation panel within 36 hours of starting. The app functioned. That's the metric that mattered.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-4 mt-8">
+                    <a href="https://github.com/tejuas98/scriptify" class="font-mono font-black text-xs uppercase text-[var(--text-primary)] border-b-2 border-[var(--border-dark)] hover:bg-[var(--bg-primary)] hover:text-[var(--text-primary)] transition-colors">GITHUB // SOURCE ↗</a>
+                    <span class="font-mono font-black text-xs uppercase text-[var(--arsenal-text)]">SIH 2025 GRAND FINALIST // SOFTWARE EDITION</span>
+                </div>
+            </div>
+            <div class="overlay-right">
+                <span class="font-mono text-[10px] font-bold tracking-[0.2em] text-[var(--arsenal-text)] block mb-4 uppercase">SYSTEM ARCHITECTURE</span>
+                <svg width="100%" height="200" viewBox="0 0 800 200" class="mb-4" style="max-width: 100%;">
+                    <rect x="10" y="50" width="120" height="60" fill="var(--text-primary)" stroke="#111" stroke-width="1"/>
+                    <text x="70" y="85" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">CAMERA INPUT</text>
+                    
+                    <line x1="130" y1="80" x2="160" y2="80" stroke="#111" stroke-width="1" marker-end="url(#arrow)"/>
+                    
+                    <rect x="160" y="50" width="120" height="60" fill="var(--text-primary)" stroke="#111" stroke-width="1"/>
+                    <text x="220" y="85" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">PREPROCESSING</text>
+
+                    <line x1="280" y1="80" x2="310" y2="80" stroke="#111" stroke-width="1" marker-end="url(#arrow)"/>
+
+                    <rect x="310" y="50" width="120" height="60" fill="var(--text-primary)" stroke="#111" stroke-width="1"/>
+                    <text x="370" y="85" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">TEXT DETECTION</text>
+
+                    <line x1="430" y1="80" x2="460" y2="80" stroke="#111" stroke-width="1" marker-end="url(#arrow)"/>
+
+                    <rect x="460" y="50" width="130" height="60" fill="var(--text-primary)" stroke="#111" stroke-width="1"/>
+                    <text x="525" y="85" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">OCR + CLOUD API</text>
+
+                    <line x1="590" y1="80" x2="620" y2="80" stroke="#111" stroke-width="1" marker-end="url(#arrow)"/>
+
+                    <rect x="620" y="50" width="170" height="60" fill="var(--text-primary)" stroke="#111" stroke-width="1"/>
+                    <text x="705" y="85" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">TRANSLITERATED OUTPUT</text>
+
+                    <path d="M 705 110 L 705 130" stroke="#111" stroke-width="1"/>
+                    <line x1="600" y1="130" x2="810" y2="130" stroke="#111" stroke-width="1"/>
+                    <path d="M 600 130 L 600 140" stroke="#111" stroke-width="1"/>
+                    <path d="M 670 130 L 670 140" stroke="#111" stroke-width="1"/>
+                    <path d="M 740 130 L 740 140" stroke="#111" stroke-width="1"/>
+                    <path d="M 810 130 L 810 140" stroke="#111" stroke-width="1"/>
+
+                    <text x="600" y="160" font-family="Space Mono" font-size="10" font-weight="bold" fill="#111" text-anchor="middle">DEVANAGARI</text>
+                    <text x="670" y="160" font-family="Space Mono" font-size="10" font-weight="bold" fill="#111" text-anchor="middle">TAMIL</text>
+                    <text x="740" y="160" font-family="Space Mono" font-size="10" font-weight="bold" fill="#111" text-anchor="middle">GURMUKHI</text>
+                    <text x="810" y="160" font-family="Space Mono" font-size="10" font-weight="bold" fill="#111" text-anchor="middle">BENGALI</text>
+
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                            <path d="M0,0 L0,6 L9,3 z" fill="#111" />
+                        </marker>
+                    </defs>
+                </svg>
+                <p class="font-serif italic text-sm text-[var(--arsenal-text)] max-w-2xl text-center">
+                    The original approach used only Tesseract OCR offline — acceptable accuracy for clean signage, unacceptable for low-contrast or damaged signs. Switched to Cloud Vision API mid-sprint after testing showed 40% improvement on real street sign images. The offline transliteration step (Aksharamukha) stayed on-device so the app works without connectivity after the first API call.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PLAN KARO OVERLAY -->
+    <div id="overlay-plankaro" class="project-overlay" data-lenis-prevent="true">
+        <button class="overlay-close" onclick="closeOverlay('plankaro')">✕ CLOSE</button>
+        <div class="overlay-content">
+            <div class="overlay-left">
+                <span class="font-mono text-[10px] font-bold tracking-[0.2em] text-[var(--arsenal-text)] block mb-6 uppercase">DATE: 2026 | TYPE: Venture Architecture + UI/UX Design | PROGRAM: AICTE IDE Bootcamp Phase-I | PARTNERS: Karan Pansari, Tanay Patil, Pranab Roy, Vaibhav Satdive | LOCATION: KBT College, Nashik</span>
+                <h2 class="font-serif font-black text-5xl tracking-tighter leading-[0.9] mb-6 uppercase">PLAN KARO</h2>
+                
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="bg-[var(--bg-secondary)] text-white font-sans font-black text-xs uppercase px-2 py-1">PRODUCT ARCHITECTURE</span>
+                    <span class="bg-[var(--bg-secondary)] text-white font-sans font-black text-xs uppercase px-2 py-1">UI/UX DESIGN</span>
+                    <span class="bg-[var(--bg-secondary)] text-white font-sans font-black text-xs uppercase px-2 py-1">LEAN CANVAS</span>
+                    <span class="bg-[var(--bg-secondary)] text-white font-sans font-black text-xs uppercase px-2 py-1">MARKET STRATEGY</span>
+                </div>
+
+                <div class="bg-[var(--text-primary)] border-[3px] border-[var(--border-dark)] p-5 shadow-[8px_8px_0_#151515] mb-8">
+                    <p class="font-sans font-bold text-lg leading-snug text-[var(--text-primary)]">
+                        In Tier-2 Indian cities, small event organizers — college fests, family functions, local cultural programs — have no structured way to discover and book local vendors: decorators, caterers, sound systems, photographers. They rely on WhatsApp referrals and cold calls. Vendors, on their side, have no consistent discovery channel.<br><br>
+                        PLAN KARO is a B2B digital marketplace that bridges this gap. The business model is built around a 12% vendor commission on confirmed bookings — a number derived from actual market research on existing event agency margins in Nashik, Aurangabad, and Bhusawal during the bootcamp.<br><br>
+                        The platform architecture: vendor onboarding → service catalog → organizer discovery → quote request → booking confirmation → commission settlement. The UX is deliberately lean — we found that Tier-2 event organizers distrust complex platforms. Every screen has one primary action.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-4 mt-8">
+                    <span class="font-mono font-black text-xs uppercase text-[var(--text-primary)]">STILL IN DEVELOPMENT</span>
+                    <a href="#" class="font-mono font-black text-xs uppercase text-[var(--arsenal-text)] border-b-2 border-transparent hover:border-[#5a5a5a] transition-colors">BETA // PREVIEW ↗</a>
+                </div>
+            </div>
+            <div class="overlay-right">
+                <svg width="100%" height="300" viewBox="0 0 600 300" class="mb-4" style="max-width: 100%;">
+                    <circle cx="150" cy="150" r="60" fill="var(--text-primary)" stroke="#111" stroke-width="1"/>
+                    <text x="150" y="145" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">EVENT</text>
+                    <text x="150" y="160" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">ORGANIZERS</text>
+                    <text x="150" y="180" font-family="Space Mono" font-size="8" fill="#5a5a5a" text-anchor="middle">(Tier-2 cities)</text>
+
+                    <rect x="250" y="120" width="100" height="60" fill="var(--text-primary)" stroke="#111" stroke-width="1"/>
+                    <text x="300" y="145" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">PLAN KARO</text>
+                    <text x="300" y="160" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">PLATFORM</text>
+                    
+                    <text x="300" y="200" font-family="Space Mono" font-size="10" font-weight="bold" fill="#111" text-anchor="middle">12% COMMISSION</text>
+                    <text x="300" y="215" font-family="Space Mono" font-size="10" font-weight="bold" fill="#111" text-anchor="middle">LEAN UX BOOKING PIPELINE</text>
+
+                    <circle cx="450" cy="150" r="60" fill="var(--text-primary)" stroke="#111" stroke-width="1"/>
+                    <text x="450" y="145" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">LOCAL</text>
+                    <text x="450" y="160" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">VENDORS</text>
+
+                    <path d="M 210 140 L 245 140" stroke="#111" stroke-width="1" marker-end="url(#arrow)"/>
+                    <path d="M 350 160 L 385 160" stroke="#111" stroke-width="1" marker-end="url(#arrow)"/>
+                </svg>
+                <p class="font-serif italic text-sm text-[var(--arsenal-text)] max-w-2xl text-center">
+                    Built during AICTE IDE Bootcamp Phase-I under Wadhwani Foundation mentors. Week 1: we obsessed over the UI. Mentor feedback was brutal — "you don't have a product, you have a mockup." Week 2: we rebuilt from the unit economics up. A 12% commission only works if booking frequency is high enough and vendor acquisition cost stays below ₹800. That math now drives every feature decision. Still in active development.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- IKS WEATHER OVERLAY -->
+    <div id="overlay-iksweather" class="project-overlay" data-lenis-prevent="true">
+        <button class="overlay-close" onclick="closeOverlay('iksweather')">✕ CLOSE</button>
+        <div class="overlay-content">
+            <div class="overlay-left">
+                <span class="font-mono text-[10px] font-bold tracking-[0.2em] text-[var(--arsenal-text)] block mb-6 uppercase">DATE: 2025–2026 | TYPE: Data Pipeline + Report Engine | STACK: Vanilla JS, HTML5/CSS3, Node.js, Tailwind CSS | CONSTRAINT: Zero external chart libraries</span>
+                <h2 class="font-serif font-black text-5xl tracking-tighter leading-[0.9] mb-6 uppercase">IKS WEATHER REPORT BUILDER</h2>
+                
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="bg-[var(--bg-secondary)] text-white font-sans font-black text-xs uppercase px-2 py-1">HTML5 / CSS3</span>
+                    <span class="bg-[var(--bg-secondary)] text-white font-sans font-black text-xs uppercase px-2 py-1">VANILLA JS</span>
+                    <span class="bg-[var(--bg-secondary)] text-white font-sans font-black text-xs uppercase px-2 py-1">NODE.JS</span>
+                    <span class="bg-[var(--bg-secondary)] text-white font-sans font-black text-xs uppercase px-2 py-1">UI DESIGN</span>
+                </div>
+
+                <div class="bg-[var(--text-primary)] border-[3px] border-[var(--border-dark)] p-5 shadow-[8px_8px_0_#151515] mb-8">
+                    <p class="font-sans font-bold text-lg leading-snug text-[var(--text-primary)]">
+                        For the IKS Bucket Assignment, I needed a way to take raw hourly weather data — temperature, humidity, wind speed, pressure — and produce a print-ready analytical report instantly, without setting up a backend or depending on a paid charting service.<br><br>
+                        The solution: a browser-based data pipeline. User inputs hourly values manually or pastes from a spreadsheet. User selects color themes for each graph series. The system generates a full-page PDF-ready report — axes, legends, annotations, title block, and all — using canvas-based rendering written from scratch in Vanilla JS.<br><br>
+                        No Chart.js. No D3. Every graph element is drawn directly on an HTML canvas using calculated coordinates. This constraint made the project significantly harder and significantly more instructive.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-4 mt-8">
+                    <a href="https://github.com/tejuas98/IKS-Weather-Report-Builder" class="font-mono font-black text-xs uppercase text-[var(--text-primary)] border-b-2 border-[var(--border-dark)] hover:bg-[var(--bg-primary)] hover:text-[var(--text-primary)] transition-colors">REPOS // DATA ↗</a>
+                </div>
+            </div>
+            <div class="overlay-right">
+                <svg width="100%" height="200" viewBox="0 0 700 200" class="mb-4" style="max-width: 100%;">
+                    <rect x="50" y="70" width="100" height="60" fill="var(--text-primary)" stroke="#111" stroke-width="1"/>
+                    <text x="100" y="100" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">RAW DATA</text>
+                    <text x="100" y="115" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">INPUT</text>
+
+                    <line x1="150" y1="100" x2="190" y2="100" stroke="#111" stroke-width="1" marker-end="url(#arrow)"/>
+
+                    <rect x="190" y="70" width="120" height="60" fill="var(--text-primary)" stroke="#111" stroke-width="1"/>
+                    <text x="250" y="100" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">USER COLOR</text>
+                    <text x="250" y="115" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">SELECTION</text>
+
+                    <line x1="310" y1="100" x2="350" y2="100" stroke="#111" stroke-width="1" marker-end="url(#arrow)"/>
+
+                    <rect x="350" y="70" width="130" height="60" fill="var(--text-primary)" stroke="#111" stroke-width="1"/>
+                    <text x="415" y="100" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">CANVAS RENDERING</text>
+                    <text x="415" y="115" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">ENGINE</text>
+
+                    <text x="415" y="150" font-family="Space Mono" font-size="10" font-weight="bold" fill="#111" text-anchor="middle">No external libraries —</text>
+                    <text x="415" y="165" font-family="Space Mono" font-size="10" font-weight="bold" fill="#111" text-anchor="middle">pure canvas API</text>
+
+                    <line x1="480" y1="100" x2="520" y2="100" stroke="#111" stroke-width="1" marker-end="url(#arrow)"/>
+
+                    <rect x="520" y="70" width="120" height="60" fill="var(--text-primary)" stroke="#111" stroke-width="1"/>
+                    <text x="580" y="100" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">PRINT-READY</text>
+                    <text x="580" y="115" font-family="Space Mono" font-size="12" font-weight="bold" fill="#111" text-anchor="middle">EXPORT</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Shared Materials & Helper
+        const outlineMaterial = new THREE.LineBasicMaterial({ color: 0x111111, linewidth: 2 });
+        const beigeMaterial = new THREE.MeshToonMaterial({ color: 0xe8e4d9 });
+        const screenMaterial = new THREE.MeshToonMaterial({ color: 0x151515, roughness: 0.2 });
+        const darkMaterial = new THREE.MeshToonMaterial({ color: 0x222222 });
+        const accentMaterial = new THREE.MeshToonMaterial({ color: 0xffb600 });
+
+        function createComicMesh(geometry, material, castShadow = true) {
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.castShadow = castShadow;
+            mesh.receiveShadow = true;
+            const edges = new THREE.EdgesGeometry(geometry);
+            const line = new THREE.LineSegments(edges, outlineMaterial);
+            mesh.add(line);
+            return mesh;
+        }
+
+        // Tracking Variables (Shared)
+        let targetRotationX = 0;
+        let targetRotationY = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            targetRotationY = (e.clientX / window.innerWidth) * 2 - 1;
+            targetRotationX = (e.clientY / window.innerHeight) * 2 - 1;
+        });
+
+        // --- MAIN COMPUTER SCENE ---
+        const container = document.getElementById('webgl-container');
+        if (container) {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.set(0, 2.5, 6.5);
+            camera.lookAt(0, 0, 0);
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            container.appendChild(renderer.domElement);
+
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+            scene.add(ambientLight);
+            const dirLight = new THREE.DirectionalLight(0xfff5e6, 0.8);
+            dirLight.position.set(5, 5, 2);
+            dirLight.castShadow = true;
+            scene.add(dirLight);
+            const fillLight = new THREE.DirectionalLight(0xaaccff, 0.3);
+            fillLight.position.set(-5, 0, 2);
+            scene.add(fillLight);
+
+            const computerGroup = new THREE.Group();
+
+            // 1. PC Tower (Base)
+            const towerGeo = new THREE.BoxGeometry(2.4, 0.6, 2.4);
+            const tower = createComicMesh(towerGeo, beigeMaterial);
+            tower.position.y = -0.3;
+            computerGroup.add(tower);
+
+            // Floppy drive slot
+            const driveGeo = new THREE.BoxGeometry(0.6, 0.05, 0.1);
+            const drive = createComicMesh(driveGeo, darkMaterial, false);
+            drive.position.set(0.5, -0.2, 1.25);
+            computerGroup.add(drive);
+
+            // Power button
+            const btnGeo = new THREE.BoxGeometry(0.15, 0.1, 0.1);
+            const btn = createComicMesh(btnGeo, accentMaterial, false);
+            btn.position.set(0.9, -0.3, 1.25);
+            computerGroup.add(btn);
+
+            // 2. Monitor Base/Neck
+            const neckGeo = new THREE.BoxGeometry(0.4, 0.4, 0.4);
+            const neck = createComicMesh(neckGeo, beigeMaterial);
+            neck.position.y = 0.2;
+            computerGroup.add(neck);
+
+            // 3. Monitor Body
+            const monitorBodyGeo = new THREE.BoxGeometry(1.8, 1.6, 1.4);
+            const monitorBody = createComicMesh(monitorBodyGeo, beigeMaterial);
+            monitorBody.position.y = 1.1;
+            monitorBody.rotation.x = -0.05; // Tilted slightly up
+            computerGroup.add(monitorBody);
+
+            // Monitor Bezel Frame
+            const bezelGeo = new THREE.BoxGeometry(1.6, 1.4, 0.1);
+            const bezel = createComicMesh(bezelGeo, beigeMaterial, false);
+            bezel.position.set(0, 1.1, 0.75);
+            bezel.rotation.x = -0.05;
+            computerGroup.add(bezel);
+
+            // Monitor Screen (Black)
+            const screenGeo = new THREE.PlaneGeometry(1.3, 1.1);
+            const screen = new THREE.Mesh(screenGeo, screenMaterial);
+            screen.position.set(0, 1.12, 0.81);
+            screen.rotation.x = -0.05;
+            computerGroup.add(screen);
+
+            // 4. Keyboard
+            const kbGeo = new THREE.BoxGeometry(2.0, 0.15, 0.8);
+            const keyboard = createComicMesh(kbGeo, beigeMaterial);
+            keyboard.position.set(0, -0.8, 1.8);
+            keyboard.rotation.x = 0.1; // Tilted towards user
+            computerGroup.add(keyboard);
+
+            // Mechanical Keyboard Keys Loop
+            const keysGroup = new THREE.Group();
+            keysGroup.position.set(0, -0.71, 1.8);
+            keysGroup.rotation.x = 0.1;
+
+            // Main typing block
+            for (let r = 0; r < 5; r++) {
+                // skip bottom middle for spacebar
+                let cols = (r === 4) ? 4 : 12;
+                for (let c = 0; c < cols; c++) {
+                    const keyGeo = new THREE.BoxGeometry(0.08, 0.04, 0.08);
+                    const key = createComicMesh(keyGeo, beigeMaterial, false);
+                    let xOffset = (r === 4) ? (c < 2 ? -0.6 : 0.25) : -0.6; // space for spacebar
+                    key.position.set(xOffset + (c * 0.095), 0, -0.2 + (r * 0.095));
+                    keysGroup.add(key);
+                }
+            }
+            // Spacebar
+            const spaceGeo = new THREE.BoxGeometry(0.6, 0.04, 0.08);
+            const spaceKey = createComicMesh(spaceGeo, beigeMaterial, false);
+            spaceKey.position.set(-0.15, 0, 0.18);
+            keysGroup.add(spaceKey);
+
+            // Numpad block
+            for (let r = 0; r < 5; r++) {
+                for (let c = 0; c < 3; c++) {
+                    const keyGeo = new THREE.BoxGeometry(0.08, 0.04, 0.08);
+                    const key = createComicMesh(keyGeo, beigeMaterial, false);
+                    key.position.set(0.65 + (c * 0.095), 0, -0.2 + (r * 0.095));
+                    keysGroup.add(key);
+                }
+            }
+            computerGroup.add(keysGroup);
+
+            // 5. Mouse Details
+            const mouseGroup = new THREE.Group();
+            mouseGroup.position.set(1.4, -0.8, 1.8);
+            mouseGroup.rotation.y = -0.2;
+
+            const mouseBaseGeo = new THREE.BoxGeometry(0.3, 0.12, 0.5);
+            const mouseBase = createComicMesh(mouseBaseGeo, beigeMaterial);
+            mouseGroup.add(mouseBase);
+
+
+
+            const wheelGeo = new THREE.BoxGeometry(0.04, 0.04, 0.08);
+            const wheel = createComicMesh(wheelGeo, darkMaterial, false);
+            wheel.position.set(0, 0.07, -0.14);
+            mouseGroup.add(wheel);
+
+            computerGroup.add(mouseGroup);
+
+
+
+            // Center group
+            computerGroup.position.y = -0.1; // lifted up to avoid clipping
+            scene.add(computerGroup);
+
+            // Floating Animation variables
+            let clock = new THREE.Clock();
+
+            // Internal tracking
+            let currentRotationX = 0;
+            let currentRotationY = 0;
+
+            window.addEventListener('resize', () => {
+                camera.aspect = container.clientWidth / container.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            });
+
+            // Reveal Animation once loaded
+            setTimeout(() => {
+                container.style.opacity = '1';
+                // Trigger an entrance pop
+                let scale = 0;
+                gsap.to({ s: 0 }, {
+                    s: 1, duration: 1.5, ease: 'elastic.out(1, 0.5)',
+                    onUpdate: function () {
+                        computerGroup.scale.set(this.targets()[0].s, this.targets()[0].s, this.targets()[0].s);
+                    }
+                });
+            }, 500);
+
+            // Render loop
+            function animate() {
+                requestAnimationFrame(animate);
+
+                const time = clock.getElapsedTime();
+
+                // 1. Water floating bob (Sine wave on Y axis)
+                const floatY = Math.sin(time * 1.5) * 0.15;
+                computerGroup.position.y = -0.1 + floatY;
+
+
+
+                // 2. Water floating tilt (Very slow rocking)
+                const floatRotZ = Math.sin(time * 0.8) * 0.05;
+
+                // 3. Smooth Lerp towards mouse target
+                currentRotationX += ((targetRotationX * 0.3) - currentRotationX) * 0.05;
+                currentRotationY += ((targetRotationY * 0.5) - currentRotationY) * 0.05;
+
+                // Combine rotation
+                computerGroup.rotation.x = currentRotationX;
+                computerGroup.rotation.y = currentRotationY - 0.5; // -0.5 offsets it slightly to the left so it looks at center
+                computerGroup.rotation.z = floatRotZ;
+
+                renderer.render(scene, camera);
+            }
+
+            // Start very small for pop-in
+            computerGroup.scale.set(0, 0, 0);
+            animate();
+        }
+
+        // --- SECONDARY CAMERA STICKER SCENE ---
+        const camContainer = document.getElementById('name-camera-container');
+        if (camContainer) {
+            const camScene = new THREE.Scene();
+            const camCamera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
+            camCamera.position.set(0, 0, 2.5);
+
+            const camRenderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            camRenderer.setSize(128, 128);
+            camRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            camContainer.appendChild(camRenderer.domElement);
+
+            camScene.add(new THREE.AmbientLight(0xffffff, 0.9));
+            const camDir = new THREE.DirectionalLight(0xffffff, 0.6);
+            camDir.position.set(2, 2, 2);
+            camScene.add(camDir);
+
+            // Camera Sticker Model
+            const cameraSticker = new THREE.Group();
+
+            // Body
+            const body = createComicMesh(new THREE.BoxGeometry(0.8, 0.5, 0.4), beigeMaterial);
+            cameraSticker.add(body);
+
+            // Top Plate
+            const topPlate = createComicMesh(new THREE.BoxGeometry(0.8, 0.1, 0.35), darkMaterial);
+            topPlate.position.y = 0.25;
+            cameraSticker.add(topPlate);
+
+            // Lens
+            const lensOuter = createComicMesh(new THREE.CylinderGeometry(0.22, 0.22, 0.1, 16), darkMaterial);
+            lensOuter.rotation.x = Math.PI / 2;
+            lensOuter.position.z = 0.25;
+            cameraSticker.add(lensOuter);
+
+            const lensInner = createComicMesh(new THREE.CylinderGeometry(0.15, 0.15, 0.05, 16), screenMaterial);
+            lensInner.rotation.x = Math.PI / 2;
+            lensInner.position.z = 0.31;
+            cameraSticker.add(lensInner);
+
+            // Shutter Button
+            const shutter = createComicMesh(new THREE.CylinderGeometry(0.05, 0.05, 0.05, 12), accentMaterial);
+            shutter.position.set(0.25, 0.33, 0.05);
+            cameraSticker.add(shutter);
+
+            // Viewfinder
+            const vf = createComicMesh(new THREE.BoxGeometry(0.15, 0.12, 0.15), darkMaterial);
+            vf.position.set(-0.15, 0.28, 0.15);
+            cameraSticker.add(vf);
+
+            cameraSticker.rotation.set(0.2, -0.4, 0);
+            camScene.add(cameraSticker);
+
+            let camCurrentRotX = 0;
+            let camCurrentRotY = 0;
+
+            let camClock = new THREE.Clock();
+            function animateCam() {
+                requestAnimationFrame(animateCam);
+                const t = camClock.getElapsedTime();
+
+                // Bobbing & Floating
+                cameraSticker.position.y = Math.sin(t * 2) * 0.05;
+
+                // Mouse tracking
+                camCurrentRotX += ((-targetRotationX * 0.4) - camCurrentRotX) * 0.1;
+                camCurrentRotY += ((-targetRotationY * 0.6) - camCurrentRotY) * 0.1;
+
+                cameraSticker.rotation.x = 0.2 + camCurrentRotX;
+                cameraSticker.rotation.y = -0.4 + camCurrentRotY + Math.sin(t * 1.5) * 0.05;
+                cameraSticker.rotation.z = Math.cos(t * 1.2) * 0.05;
+
+                camRenderer.render(camScene, camCamera);
+            }
+            animateCam();
+        }
+    
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+        });
+    </script>
+
 </body>
 </html>
