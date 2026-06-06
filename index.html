@@ -402,11 +402,11 @@
     <div id="cursor-follower" class="fixed w-6 h-6 border-2 border-[var(--text-primary)] rounded-full pointer-events-none z-[9999] transition-transform duration-75 ease-out mix-blend-difference hidden md:block"></div>
 
     <!-- TOP NAVIGATION -->
-    <nav id="top-nav" class="fixed top-0 left-0 w-full z-50 mix-blend-difference flex justify-between items-center px-4 md:px-8 py-4 transition-all duration-300">
-        <a href="#" class="font-serif font-black text-xl md:text-3xl tracking-tighter uppercase text-[#e4dfd6]">
+    <nav id="top-nav" class="fixed top-0 left-0 w-full z-50 bg-[var(--bg-primary)] border-b-[3px] border-[var(--border-primary)] text-[var(--text-primary)] flex justify-between items-center px-4 md:px-8 py-4 transition-all duration-300">
+        <a href="#" class="font-serif font-black text-xl md:text-3xl tracking-tighter uppercase text-[var(--text-primary)]">
             SUIP COMPUTERS
         </a>
-        <div class="flex gap-4 md:gap-8 items-center text-[#e4dfd6] font-mono text-xs md:text-sm font-bold tracking-widest">
+        <div class="flex gap-4 md:gap-8 items-center text-[var(--text-primary)] font-mono text-xs md:text-sm font-bold tracking-widest">
             <button id="cart-btn" class="hover:underline">CART (<span id="cart-count">0</span>)</button>
             <button id="theme-toggle" class="hover:underline">[ THEME ]</button>
         </div>
@@ -419,7 +419,7 @@
         <section class="min-h-screen flex flex-col justify-center px-4 md:px-12 pt-20 relative overflow-hidden">
             <!-- WebGL Container for Retro Computer -->
             <div id="webgl-container"
-                class="absolute right-[0%] md:right-[-10%] top-1/2 -translate-y-1/2 w-full md:w-[60%] h-full z-10 pointer-events-none opacity-100 mix-blend-difference">
+                class="absolute right-[0%] md:right-[-10%] top-1/2 -translate-y-1/2 w-full md:w-[60%] h-full z-10 pointer-events-none opacity-100">
             </div>
             <div class="stagger-element max-w-7xl mx-auto w-full">
                 <span class="font-mono text-[10px] md:text-xs font-bold tracking-[0.2em] text-[var(--text-secondary)] block mb-4 md:mb-6 uppercase">NEW ARRIVAL // FLAGSHIP</span>
@@ -431,7 +431,7 @@
                     <p class="font-styrene text-xl md:text-2xl leading-relaxed max-w-2xl text-[var(--text-primary)]">
                         Unapologetic performance. Brutalist architecture. The ultimate computational powerhouse built for AI inference and high-end rendering.
                     </p>
-                    <button onclick="addToCart('Neural Engine v2', 299999)" class="bg-[var(--text-primary)] text-[var(--bg-primary)] font-mono font-black text-sm tracking-[0.2em] uppercase px-8 py-4 hover:scale-105 transition-transform duration-300 shrink-0">
+                    <button onclick="addToCart('Neural Engine v2', 299999)" class="bg-[var(--text-primary)] text-[var(--bg-primary)] font-mono font-black text-sm tracking-[0.2em] uppercase px-8 py-4 hover:scale-105 transition-transform duration-300 shrink-0 relative z-20 shadow-[8px_8px_0_var(--border-primary)] border-2 border-[var(--border-primary)]">
                         ADD TO CART - ₹2,99,999
                     </button>
                 </div>
