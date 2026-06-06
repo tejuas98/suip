@@ -448,11 +448,22 @@
                     <h2 class="font-serif font-black text-4xl md:text-6xl tracking-tighter uppercase">HARDWARE</h2>
                 </div>
 
+                
+                <!-- Filter Bar -->
+                <div class="flex flex-wrap gap-4 mb-8 stagger-element border-b-[3px] border-[var(--border-primary)] pb-6">
+                    <button onclick="filterProducts('ALL')" class="filter-btn active font-mono font-bold text-xs md:text-sm px-4 py-2 bg-[var(--text-primary)] text-[var(--bg-primary)] border-2 border-[var(--text-primary)] hover:opacity-80 transition-opacity">ALL</button>
+                    <button onclick="filterProducts('COMPUTE')" class="filter-btn font-mono font-bold text-xs md:text-sm px-4 py-2 border-2 border-[var(--text-primary)] hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-colors">COMPUTE</button>
+                    <button onclick="filterProducts('CORE')" class="filter-btn font-mono font-bold text-xs md:text-sm px-4 py-2 border-2 border-[var(--text-primary)] hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-colors">CORE</button>
+                    <button onclick="filterProducts('STORAGE')" class="filter-btn font-mono font-bold text-xs md:text-sm px-4 py-2 border-2 border-[var(--text-primary)] hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-colors">STORAGE</button>
+                    <button onclick="filterProducts('PERIPHERAL')" class="filter-btn font-mono font-bold text-xs md:text-sm px-4 py-2 border-2 border-[var(--text-primary)] hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-colors">PERIPHERAL</button>
+                    <button onclick="filterProducts('POWER')" class="filter-btn font-mono font-bold text-xs md:text-sm px-4 py-2 border-2 border-[var(--text-primary)] hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-colors">POWER</button>
+                    <button onclick="filterProducts('COOLING')" class="filter-btn font-mono font-bold text-xs md:text-sm px-4 py-2 border-2 border-[var(--text-primary)] hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-colors">COOLING</button>
+                </div>
+
                 <!-- Bento Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-element">
-                    
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-element" id="product-grid">
                     <!-- GPU -->
-                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between">
+                    <div class="product-card bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between" data-category="COMPUTE">
                         <div>
                             <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">COMPUTE</h3>
                             <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
@@ -475,7 +486,7 @@
                     </div>
 
                     <!-- MOTHERBOARD -->
-                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between">
+                    <div class="product-card bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between" data-category="CORE">
                         <div>
                             <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">CORE</h3>
                             <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
@@ -498,7 +509,7 @@
                     </div>
 
                     <!-- PROCESSOR -->
-                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between">
+                    <div class="product-card bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between" data-category="COMPUTE">
                         <div>
                             <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">PROCESSOR</h3>
                             <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
@@ -521,7 +532,7 @@
                     </div>
 
                     <!-- KEYBOARD -->
-                    <div class="bg-[var(--text-primary)] border-[3px] border-[var(--border-dark)] p-8 shadow-[8px_8px_0_var(--border-dark)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--border-dark)] transition-all duration-300 flex flex-col justify-between">
+                    <div class="product-card bg-[var(--text-primary)] border-[3px] border-[var(--border-dark)] p-8 shadow-[8px_8px_0_var(--border-dark)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--border-dark)] transition-all duration-300 flex flex-col justify-between" data-category="PERIPHERAL">
                         <div>
                             <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--bg-primary)] mb-4">PERIPHERAL</h3>
                             <div class="w-full h-40 mb-4 bg-[#1a1a1a] border-2 border-[var(--border-dark)] overflow-hidden">
@@ -544,11 +555,11 @@
                     </div>
                     
                     <!-- SSD -->
-                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between">
+                    <div class="product-card bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between" data-category="STORAGE">
                         <div>
                             <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">STORAGE</h3>
-                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1628557044797-f21a177c37ec?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden flex items-center justify-center p-4">
+                                <img src="https://m.media-amazon.com/images/I/71uVvEwT4uL._AC_SX679_.jpg" class="h-full object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
                             </div>
                             <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">GEONIX 256GB SSD</h4>
                             <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)] mb-2">
@@ -567,11 +578,11 @@
                     </div>
                     
                     <!-- POWER SUPPLY -->
-                    <div class="bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between">
+                    <div class="product-card bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between" data-category="POWER">
                         <div>
                             <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">POWER</h3>
-                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden flex justify-center items-center p-4">
+                                <img src="https://m.media-amazon.com/images/I/81xUUSb80OL._AC_SX679_.jpg" class="h-full object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
                             </div>
                             <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">MWE 550 V3 PSU</h4>
                             <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)] mb-2">
@@ -589,9 +600,145 @@
                         </div>
                     </div>
 
-                </div>
+                    <!-- NEW: ZOTAC 5060 GPU -->
+                    <div class="product-card bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between" data-category="COMPUTE">
+                        <div>
+                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">COMPUTE</h3>
+                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden flex justify-center items-center p-4">
+                                <img src="https://m.media-amazon.com/images/I/71R2nJroO5L._AC_SX679_.jpg" class="h-full object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">ZOTAC RTX 5060</h4>
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)] mb-2">
+                                Twin Edge 8GB GDDR7 | DLSS4 | PCIE 5.0 | SFF Ready. High Performance.
+                            </p>
+                            <div class="font-mono text-xs text-green-600 font-bold mb-1">FREE delivery Tue, 9 Jun</div>
+                            <div class="font-mono text-xs text-[var(--arsenal-text)]">Save extra with No Cost EMI</div>
+                        </div>
+                        <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
+                            <div class="flex flex-col">
+                                <span class="font-mono text-xs line-through text-[var(--arsenal-text)]">M.R.P: ₹50,135</span>
+                                <span class="font-mono font-bold text-xl text-[var(--arsenal-title)]">₹41,809 <span class="text-xs text-red-600 font-bold ml-1">(17% OFF)</span></span>
+                            </div>
+                            <button onclick="addToCart('ZOTAC RTX 5060', 41809)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                        </div>
+                    </div>
 
-                <!-- COMPANY POLICIES -->
+                    <!-- NEW: AMD RYZEN 5 3400G -->
+                    <div class="product-card bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between" data-category="COMPUTE">
+                        <div>
+                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">COMPUTE</h3>
+                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden flex justify-center items-center p-4">
+                                <img src="https://m.media-amazon.com/images/I/71BwM8QfJqL._AC_SX679_.jpg" class="h-full object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">Ryzen 5 3400G</h4>
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)] mb-2">
+                                4 Cores. up to 4.2 GHz, AM4 Socket. Radeon Vega 11 Graphics.
+                            </p>
+                            <div class="font-mono text-xs text-green-600 font-bold mb-1">FREE delivery Sat, 13 Jun</div>
+                            <div class="font-mono text-xs text-red-600 font-bold">Only 1 left in stock.</div>
+                        </div>
+                        <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
+                            <div class="flex flex-col">
+                                <span class="font-mono text-xs line-through text-[var(--arsenal-text)]">M.R.P: ₹10,215</span>
+                                <span class="font-mono font-bold text-xl text-[var(--arsenal-title)]">₹7,999 <span class="text-xs text-red-600 font-bold ml-1">(22% OFF)</span></span>
+                            </div>
+                            <button onclick="addToCart('Ryzen 5 3400G', 7999)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                        </div>
+                    </div>
+
+                    <!-- NEW: CORSAIR VENGEANCE RAM -->
+                    <div class="product-card bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between" data-category="CORE">
+                        <div>
+                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">CORE</h3>
+                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden flex justify-center items-center p-4">
+                                <img src="https://m.media-amazon.com/images/I/51pwG3u1h-L._AC_SX679_.jpg" class="h-full object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">Vengeance 16GB</h4>
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)] mb-2">
+                                Corsair Vengeance LPX 16GB (1x16GB) DDR4 3200MHZ UDIMM.
+                            </p>
+                            <div class="font-mono text-xs text-green-600 font-bold mb-1">In Stock.</div>
+                            <div class="font-mono text-xs text-[var(--arsenal-text)]">200+ bought in past month</div>
+                        </div>
+                        <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
+                            <div class="flex flex-col">
+                                <span class="font-mono text-xs line-through text-[var(--arsenal-text)]">M.R.P: ₹13,500</span>
+                                <span class="font-mono font-bold text-xl text-[var(--arsenal-title)]">₹9,920 <span class="text-xs text-red-600 font-bold ml-1">(27% OFF)</span></span>
+                            </div>
+                            <button onclick="addToCart('Vengeance 16GB', 9920)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                        </div>
+                    </div>
+
+                    <!-- NEW: COOLER MASTER THERMAL PASTE -->
+                    <div class="product-card bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between" data-category="COOLING">
+                        <div>
+                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">COOLING</h3>
+                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden flex justify-center items-center p-4">
+                                <img src="https://m.media-amazon.com/images/I/61NlH2yB2hL._AC_SX679_.jpg" class="h-full object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">Cryofuze Paste</h4>
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)] mb-2">
+                                Violet Thermal Paste for Processor, GPU, Console. 12.6 W/m-K Conductivity.
+                            </p>
+                            <div class="font-mono text-xs text-green-600 font-bold mb-1">FREE delivery Tue, 9 Jun</div>
+                            <div class="font-mono text-xs text-[var(--arsenal-text)]">500+ bought in past month</div>
+                        </div>
+                        <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
+                            <div class="flex flex-col">
+                                <span class="font-mono text-xs line-through text-[var(--arsenal-text)]">M.R.P: ₹1,099</span>
+                                <span class="font-mono font-bold text-xl text-[var(--arsenal-title)]">₹329 <span class="text-xs text-red-600 font-bold ml-1">(70% OFF)</span></span>
+                            </div>
+                            <button onclick="addToCart('Cryofuze Paste', 329)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                        </div>
+                    </div>
+
+                    <!-- NEW: THERMAL GRIZZLY CONTACT FRAME -->
+                    <div class="product-card bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between" data-category="COOLING">
+                        <div>
+                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">COOLING</h3>
+                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden flex justify-center items-center p-4">
+                                <img src="https://m.media-amazon.com/images/I/61Hk26e6JjL._AC_SX679_.jpg" class="h-full object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">AM5 Contact Frame</h4>
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)] mb-2">
+                                Thermal Grizzly. CPU Guard Combination. Optimizes Contact Pressure.
+                            </p>
+                            <div class="font-mono text-xs text-green-600 font-bold mb-1">FREE delivery Tue, 9 Jun</div>
+                            <div class="font-mono text-xs text-[var(--arsenal-text)]">Top Rated Component</div>
+                        </div>
+                        <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
+                            <div class="flex flex-col">
+                                <span class="font-mono text-xs line-through text-[var(--arsenal-text)]">M.R.P: ₹1,999</span>
+                                <span class="font-mono font-bold text-xl text-[var(--arsenal-title)]">₹999 <span class="text-xs text-red-600 font-bold ml-1">(50% OFF)</span></span>
+                            </div>
+                            <button onclick="addToCart('AM5 Contact Frame', 999)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                        </div>
+                    </div>
+
+                    <!-- NEW: CONSISTENT SSD -->
+                    <div class="product-card bg-[var(--arsenal-card-bg)] border-[3px] border-[var(--arsenal-border)] p-8 shadow-[8px_8px_0_var(--arsenal-shadow)] hover:-translate-y-1 hover:shadow-[12px_12px_0_var(--arsenal-shadow)] transition-all duration-300 flex flex-col justify-between" data-category="STORAGE">
+                        <div>
+                            <h3 class="font-mono font-black text-sm tracking-[0.2em] uppercase text-[var(--arsenal-title)] mb-4">STORAGE</h3>
+                            <div class="w-full h-40 mb-4 bg-[#e4dfd6] border-2 border-[var(--arsenal-border)] overflow-hidden flex justify-center items-center p-4">
+                                <img src="https://m.media-amazon.com/images/I/61b17WkOtbL._AC_SX679_.jpg" class="h-full object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <h4 class="font-serif font-black text-2xl uppercase text-[var(--arsenal-title)] mb-2">Consistent SSD</h4>
+                            <p class="font-sans font-bold text-sm leading-relaxed text-[var(--arsenal-text)] mb-2">
+                                256GB 2.5 Inch SATA Internal SSD. 550MB/s Read. 5 Year Warranty.
+                            </p>
+                            <div class="font-mono text-xs text-green-600 font-bold mb-1">FREE delivery Wed, 10 Jun</div>
+                            <div class="font-mono text-xs text-[var(--arsenal-text)]">1K+ bought in past month</div>
+                        </div>
+                        <div class="flex justify-between items-end mt-4 border-t-2 border-[var(--arsenal-border)] pt-4">
+                            <div class="flex flex-col">
+                                <span class="font-mono text-xs line-through text-[var(--arsenal-text)]">M.R.P: ₹5,999</span>
+                                <span class="font-mono font-bold text-xl text-[var(--arsenal-title)]">₹2,739 <span class="text-xs text-red-600 font-bold ml-1">(54% OFF)</span></span>
+                            </div>
+                            <button onclick="addToCart('Consistent SSD', 2739)" class="bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-bold text-xs px-4 py-2 hover:opacity-80 transition-opacity">BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+<!-- COMPANY POLICIES -->
                 <div class="mt-20 border-[3px] border-[var(--border-primary)] p-8 flex flex-col md:flex-row justify-between items-center gap-8 bg-[var(--bg-primary)] stagger-element">
                     <div class="flex flex-col items-center text-center">
                         <span class="text-4xl mb-2">⚡</span>
@@ -642,7 +789,84 @@
         <!-- Overlay -->
         <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-[90] hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm"></div>
 
-    </main>
+    
+        <!-- CHECKOUT MODAL -->
+        <div id="checkout-modal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4 md:p-12 pointer-events-none">
+            <div class="absolute inset-0 bg-black/80 backdrop-blur-sm checkout-bg pointer-events-auto transition-opacity duration-300 opacity-0" onclick="closeCheckout()"></div>
+            
+            <div class="checkout-content bg-[var(--arsenal-card-bg)] border-[4px] border-[var(--arsenal-border)] w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-[16px_16px_0_var(--arsenal-shadow)] pointer-events-auto transform translate-y-12 opacity-0 transition-all duration-500 relative z-[201] flex flex-col md:flex-row">
+                
+                <!-- Left: Summary -->
+                <div class="w-full md:w-1/3 bg-[var(--text-primary)] border-b-[4px] md:border-b-0 md:border-r-[4px] border-[var(--border-dark)] p-8 text-[var(--bg-primary)]">
+                    <h2 class="font-serif font-black text-3xl uppercase mb-6">ORDER<br>SUMMARY</h2>
+                    <div id="checkout-items" class="font-mono text-xs space-y-4 mb-8 opacity-80">
+                        <!-- Populated by JS -->
+                    </div>
+                    <div class="border-t-[3px] border-[var(--bg-primary)] pt-4">
+                        <div class="flex justify-between font-mono font-bold text-xl">
+                            <span>TOTAL:</span>
+                            <span id="checkout-total">₹0</span>
+                        </div>
+                        <p class="font-sans text-xs italic mt-2 opacity-70">Taxes and Shipping calculated automatically.</p>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="w-full md:w-2/3 p-8">
+                    <div class="flex justify-between items-center mb-8 border-b-[3px] border-[var(--arsenal-border)] pb-4">
+                        <h2 class="font-serif font-black text-3xl uppercase text-[var(--arsenal-title)]">SHIPPING DETAILS</h2>
+                        <button onclick="closeCheckout()" class="font-mono font-bold text-sm hover:underline text-[var(--arsenal-text)]">✕ CANCEL</button>
+                    </div>
+
+                    <form id="checkout-form" class="space-y-6" onsubmit="submitCheckout(event)">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex flex-col">
+                                <label class="font-mono font-bold text-xs tracking-widest text-[var(--arsenal-text)] mb-2">FULL NAME</label>
+                                <input type="text" required class="bg-transparent border-[3px] border-[var(--arsenal-border)] p-3 font-mono text-sm focus:outline-none focus:bg-[#e4dfd6] focus:border-[var(--arsenal-shadow)] transition-colors text-[var(--arsenal-title)]">
+                            </div>
+                            <div class="flex flex-col">
+                                <label class="font-mono font-bold text-xs tracking-widest text-[var(--arsenal-text)] mb-2">EMAIL ADDRESS</label>
+                                <input type="email" required class="bg-transparent border-[3px] border-[var(--arsenal-border)] p-3 font-mono text-sm focus:outline-none focus:bg-[#e4dfd6] focus:border-[var(--arsenal-shadow)] transition-colors text-[var(--arsenal-title)]">
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label class="font-mono font-bold text-xs tracking-widest text-[var(--arsenal-text)] mb-2">DELIVERY ADDRESS</label>
+                            <textarea required rows="3" class="bg-transparent border-[3px] border-[var(--arsenal-border)] p-3 font-mono text-sm focus:outline-none focus:bg-[#e4dfd6] focus:border-[var(--arsenal-shadow)] transition-colors resize-none text-[var(--arsenal-title)]"></textarea>
+                        </div>
+
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                            <div class="flex flex-col">
+                                <label class="font-mono font-bold text-xs tracking-widest text-[var(--arsenal-text)] mb-2">CITY</label>
+                                <input type="text" required class="bg-transparent border-[3px] border-[var(--arsenal-border)] p-3 font-mono text-sm focus:outline-none focus:bg-[#e4dfd6] focus:border-[var(--arsenal-shadow)] transition-colors text-[var(--arsenal-title)]">
+                            </div>
+                            <div class="flex flex-col">
+                                <label class="font-mono font-bold text-xs tracking-widest text-[var(--arsenal-text)] mb-2">STATE</label>
+                                <input type="text" required class="bg-transparent border-[3px] border-[var(--arsenal-border)] p-3 font-mono text-sm focus:outline-none focus:bg-[#e4dfd6] focus:border-[var(--arsenal-shadow)] transition-colors text-[var(--arsenal-title)]">
+                            </div>
+                            <div class="flex flex-col col-span-2 md:col-span-1">
+                                <label class="font-mono font-bold text-xs tracking-widest text-[var(--arsenal-text)] mb-2">PINCODE</label>
+                                <input type="text" required pattern="[0-9]{6}" class="bg-transparent border-[3px] border-[var(--arsenal-border)] p-3 font-mono text-sm focus:outline-none focus:bg-[#e4dfd6] focus:border-[var(--arsenal-shadow)] transition-colors text-[var(--arsenal-title)]">
+                            </div>
+                        </div>
+                        
+                        <div class="bg-[var(--text-primary)]/10 border-[2px] border-dashed border-[var(--arsenal-border)] p-4 flex items-center gap-4 mt-8">
+                            <span class="text-3xl">📦</span>
+                            <div>
+                                <p class="font-mono font-bold text-sm text-[var(--arsenal-title)]">Estimated Delivery</p>
+                                <p class="font-serif text-xs text-[var(--arsenal-text)] italic">Arriving in 3-5 Business Days. Tracked shipping.</p>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-[var(--arsenal-title)] text-[var(--arsenal-card-bg)] font-mono font-black text-lg tracking-[0.2em] uppercase py-4 mt-8 hover:-translate-y-1 hover:shadow-[6px_6px_0_var(--arsenal-shadow)] transition-all border-[3px] border-[var(--arsenal-title)]">
+                            PLACE ORDER
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+</main>
+
 
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
@@ -744,14 +968,91 @@
             }
         }
         
-        window.checkout = function() {
+        
+        // Filter Logic
+        window.filterProducts = function(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-[var(--text-primary)]', 'text-[var(--bg-primary)]', 'active');
+                btn.classList.add('hover:bg-[var(--text-primary)]', 'hover:text-[var(--bg-primary)]');
+            });
+            event.target.classList.add('bg-[var(--text-primary)]', 'text-[var(--bg-primary)]', 'active');
+            event.target.classList.remove('hover:bg-[var(--text-primary)]', 'hover:text-[var(--bg-primary)]');
+
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'ALL' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                    gsap.fromTo(card, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.5)" });
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Checkout Modal Logic
+        const checkoutModal = document.getElementById('checkout-modal');
+        const checkoutBg = checkoutModal.querySelector('.checkout-bg');
+        const checkoutContent = checkoutModal.querySelector('.checkout-content');
+        
+        window.openCheckout = function() {
+            if(cart.length === 0) return alert("Your cart is empty!");
+            
+            // Populate summary
+            const itemsDiv = document.getElementById('checkout-items');
+            itemsDiv.innerHTML = cart.map(item => `
+                <div class="flex justify-between border-b-[1px] border-[var(--bg-primary)]/20 pb-2">
+                    <span>${item.name}</span>
+                    <span>₹${item.price.toLocaleString('en-IN')}</span>
+                </div>
+            `).join('');
+            document.getElementById('checkout-total').innerText = '₹' + total.toLocaleString('en-IN');
+
+            checkoutModal.classList.remove('hidden');
+            checkoutModal.classList.add('flex');
+            
+            // Force reflow
+            void checkoutModal.offsetWidth;
+            
+            checkoutBg.classList.remove('opacity-0');
+            checkoutBg.classList.add('opacity-100');
+            checkoutContent.classList.remove('translate-y-12', 'opacity-0');
+            
+            toggleCart(); // Close sidebar
+            lenis.stop();
+        }
+
+        window.closeCheckout = function() {
+            checkoutBg.classList.remove('opacity-100');
+            checkoutBg.classList.add('opacity-0');
+            checkoutContent.classList.add('translate-y-12', 'opacity-0');
+            
+            setTimeout(() => {
+                checkoutModal.classList.add('hidden');
+                checkoutModal.classList.remove('flex');
+                lenis.start();
+            }, 500);
+        }
+
+        window.submitCheckout = function(e) {
+            e.preventDefault();
+            alert("Order Placed Successfully! This is a demo frontend.");
+            cart = [];
+            total = 0;
+            updateCartUI();
+            closeCheckout();
+            document.getElementById('checkout-form').reset();
+        }
+
+        window.checkout = window.openCheckout;
+        /* Old checkout 
             if(cart.length === 0) return alert("Cart is empty!");
             alert("Thanks for your purchase! (Hackathon Demo)");
             cart = [];
             total = 0;
             updateCartUI();
             toggleCart();
-        }
+        }*/
 
         updateCartUI();
 
